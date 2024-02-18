@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Protest Riot", sans-serif;
+}
+
+.navbar {
+    background-color: #000;
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-menu li {
+    margin-right: 20px;
+  }
+  
+  .navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-link:hover {
+    color: gold;
+  }
+  
+  .navbar-link:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: gold;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-link:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+  /*?Navbar tasarımı bitişi  */
+
+  .book {
+    width: 60%;
+    height: 400px; /* Defterin yüksekliği */
+    margin: 50px auto;
+    position: relative; /* Sayfaların konumlandırılması için */
+    background-color: black;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden; /* Sayfaların sınırları içinde kalması için */
+    perspective: 1500px; /* 3 boyutlu dönüş için */
+}
+
+.book:before, .book:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #000000;
+    transform-origin: left center;
+}
+
+.book:after {
+    left: 50%;
+    transform-origin: right center;
+}
+
+.page {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d; /* 3 boyutlu dönüş için */
+    transition: transform 0.5s; /* Dönüş animasyonu */
+}
+
+.page-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    color: #333;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 20px;
+    position: absolute; /* Sayfaları üst üste koymak için */
+}
+
+.page-inner:nth-child(odd) {
+    transform-origin: left center;
+}
+
+.page-inner:nth-child(even) {
+    transform-origin: right center;
+}
+
+.page:nth-child(even) .page-inner {
+    transform: rotateY(180deg); /* Çift sayfalı sayfaların arka yüzünü çevirme */
+}
+
+.current-page {
+  transform: rotateY(0deg);
+}
+
+.next-page {
+  transform: rotateY(-180deg);
+}
+
+.yemekresim1{
+  width: 100%;
+  height: 100%;
+}
